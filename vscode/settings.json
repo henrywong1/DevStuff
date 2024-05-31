@@ -1,0 +1,306 @@
+{
+   // =================
+   // VIM CONFIGURATION
+   // =================
+
+   //   "editor.lineNumbers": "relative",
+   "editor.cursorSurroundingLines": 8,
+   "terminal.integrated.cursorBlinking": false,
+   "editor.cursorBlinking": "solid",
+
+   "vim.useSystemClipboard": true,
+   "vim.useCtrlKeys": true,
+   "vim.leader": "space",
+   "vim.searchMatchTextColor": "white",
+
+   "vim.highlightedyank.enable": true,
+   "vim.highlightedyank.duration": 250,
+   "vim.highlightedyank.color": "rgba(241, 48, 48, 0)",
+   "vim.highlightedyank.textColor": "yellow",
+
+   "vim.handleKeys": {
+      "<C-j>": false,
+      "<C-k>": false,
+      "<C-p>": false
+      // Find usage for c-s
+   },
+
+   // c-g = info position
+   // {Num} G = go line
+
+   // gd = definition
+   // gh = hover
+
+   // vi/va = in out
+   // '/char\c' = all matches
+   // insert = c-w,u,h
+   // o = visual mode
+   // g c-a = increment numb
+
+   "vim.normalModeKeyBindingsNonRecursive": [
+      {
+         "before": ["u"],
+         "commands": ["undo"]
+      },
+      {
+         "before": ["U"],
+         "commands": ["redo"]
+      },
+      {
+         "before": ["leader", "s"],
+         "commands": ["editor.action.formatDocument"]
+      },
+      {
+         "before": ["leader", "leader", "j"],
+         "after": ["J"]
+      },
+
+      // MOTIONS
+      {
+         "before": ["leader", "a"],
+         "after": ["A"]
+      },
+      {
+         "before": ["leader", "i"],
+         "after": ["I"]
+      },
+
+      // KEEP or REMAP
+      {
+         "before": ["K"],
+         "commands": [""]
+      },
+      {
+         "before": ["J"],
+         "commands": [""]
+      },
+
+      // FIND MOTION
+      {
+         "before": ["s"],
+         "commands": ["findThenJump.initiate"]
+      },
+      {
+         "before": ["S"],
+         "commands": ["findThenJump.initiateWithSelection"]
+      },
+
+      // TOGGLE FUNCTIONS
+      {
+         "before": ["leader", "t", "m"],
+         "commands": ["errorLens.toggleInlineMessage"]
+      },
+      {
+         "before": ["leader", "t", "s"],
+         "commands": ["cSpell.toggleEnableSpellChecker"]
+      },
+      {
+         "before": ["leader", "t", "z"],
+         "commands": ["workbench.action.toggleZenMode"]
+      },
+
+      // ERRORS: Remove the msg f8 popup
+      {
+         "before": ["leader", "q"],
+         "commands": ["editor.action.quickFix"]
+      },
+      {
+         "before": ["leader", "e"],
+         "commands": ["editor.action.marker.next"]
+      },
+      {
+         "before": ["leader", "leader", "e"],
+         "commands": ["editor.action.marker.prev"]
+      },
+
+      // GIT CHANGES
+      {
+         "before": ["leader", "w"],
+         "commands": ["editor.action.dirtydiff.next"]
+      },
+      {
+         "before": ["leader", "leader", "w"],
+         "commands": ["editor.action.dirtydiff.previous"]
+      },
+      {
+         "before": ["leader", "tab"],
+         "commands": ["git.openChange"]
+      },
+
+      // TABS
+      {
+         "before": ["leader", "1"],
+         "commands": [":tabfirst"]
+      },
+      {
+         "before": ["leader", "9"],
+         "commands": [":tablast"]
+      },
+
+      {
+         "before": ["leader", "2"],
+         "commands": ["workbench.action.openEditorAtIndex2"]
+      },
+      {
+         "before": ["leader", "3"],
+         "commands": ["workbench.action.openEditorAtIndex3"]
+      },
+      {
+         "before": ["leader", "4"],
+         "commands": ["workbench.action.openEditorAtIndex4"]
+      },
+      {
+         "before": ["leader", "5"],
+         "commands": ["workbench.action.openEditorAtIndex5"]
+      },
+      {
+         "before": ["leader", "6"],
+         "commands": ["workbench.action.openEditorAtIndex6"]
+      },
+      {
+         "before": ["leader", "7"],
+         "commands": ["workbench.action.openEditorAtIndex7"]
+      },
+      {
+         "before": ["leader", "8"],
+         "commands": ["workbench.action.openEditorAtIndex8"]
+      },
+      // FILE UTILS
+      {
+         "before": ["leader", "d", "d"],
+         "commands": ["moveFileToTrash"]
+      },
+      {
+         "before": ["leader", "d", "f"],
+         "commands": ["dynoFileUtils.deleteFolder"]
+      },
+      {
+         "before": ["leader", "d", "a"],
+         "commands": ["dynoFileUtils.newItems"]
+      },
+      {
+         "before": ["leader", "d", "c"],
+         "commands": ["dynoFileUtils.newItemsAtCurrentPath"]
+      },
+      {
+         "before": ["leader", "d", "x"],
+         "commands": ["dynoFileUtils.moveFile"]
+      },
+      {
+         "before": ["leader", "d", "y"],
+         "commands": ["dynoFileUtils.duplicateFile"]
+      },
+      {
+         "before": ["leader", "d", "r"],
+         "commands": ["dynoFileUtils.renameFile"]
+      },
+
+      // FIND IT FASTER
+      // History Files - Missing
+      {
+         "before": ["leader", "f", "f"],
+         "commands": ["find-it-faster.findFiles"]
+      },
+      {
+         "before": ["leader", "f", "w"],
+         "commands": ["find-it-faster.findWithinFiles"]
+      },
+      {
+         "before": ["leader", "f", "o"],
+         "commands": ["find-it-faster.resumeSearch"]
+      },
+      {
+         "before": ["leader", "f", "t"],
+         "commands": ["find-it-faster.findWithinFilesWithType"]
+      },
+      {
+         "before": ["leader", "f", "r"],
+         "commands": ["editor.action.goToReferences"]
+      }
+   ],
+
+   "vim.visualModeKeyBindings": [
+      {
+         "before": ["K"],
+         "commands": ["editor.action.moveLinesUpAction"]
+      },
+      {
+         "before": ["J"],
+         "commands": ["editor.action.moveLinesDownAction"]
+      }
+   ],
+   // ===================
+   // UI/UX CONFIGURATION
+   // ===================
+
+   // "window.titleBarStyle": "custom",
+
+   // =====================
+   // GENERAL CONFIGURATION
+   // =====================
+
+   "workbench.settings.editor": "json",
+   "workbench.startupEditor": "none",
+   "window.zoomLevel": 1,
+   "editor.fontSize": 16,
+   "terminal.integrated.fontSize": 14,
+
+   "files.autoSave": "afterDelay",
+   "files.autoSaveDelay": 1000, // 8000
+   "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+   "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
+   },
+   "[css]": {
+      "editor.defaultFormatter": "vscode.css-language-features"
+   },
+
+   "editor.tabSize": 3,
+   "prettier.tabWidth": 3,
+   "editor.detectIndentation": false,
+   "editor.bracketPairColorization.enabled": false,
+
+   "workbench.activityBar.location": "hidden",
+   "editor.minimap.enabled": false,
+   "window.commandCenter": false,
+   "workbench.layoutControl.enabled": false,
+   "editor.scrollbar.vertical": "hidden",
+   "editor.scrollbar.horizontal": "hidden",
+
+   "zenMode.fullScreen": true,
+   "zenMode.hideStatusBar": false,
+   "zenMode.showTabs": "multiple",
+   "zenMode.hideLineNumbers": false,
+   "zenMode.silentNotifications": false,
+
+   "terminal.integrated.tabs.enabled": false,
+   "search.exclude": {
+      "**/node_modules": true,
+      "**/bower_components": true,
+      "**/*.code-search": true,
+      "**/*.jpg": true,
+      "**/*.jpeg": true,
+      "**/*.png": true,
+      "**/*.svg": true,
+      "**/.vscodeignore": true,
+      "**/.gitattributes": true,
+      "**/.gitignore": true
+   },
+
+   "typescript.disableAutomaticTypeAcquisition": true, // Learn more about this
+   "editor.acceptSuggestionOnCommitCharacter": false,
+   "editor.accessibilitySupport": "off",
+   "update.mode": "manual",
+   "codeium.enableConfig": {
+      "*": true,
+      "jsonc": false
+   },
+   "workbench.sideBar.location": "right",
+   "workbench.colorTheme": "Catppuccin Mocha",
+   "editor.stickyScroll.enabled": false,
+   "workbench.iconTheme": "catppuccin-mocha",
+   "vscode_custom_css.imports": [
+      "file:///c:/Users/henry/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.3/dist/updateHandler.js"
+   ]
+}
