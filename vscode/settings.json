@@ -245,6 +245,7 @@
    "editor.fontSize": 16,
    "terminal.integrated.fontSize": 14,
 
+   "editor.formatOnSave": true,
    "files.autoSave": "afterDelay",
    "files.autoSaveDelay": 1000, // 8000
    "editor.defaultFormatter": "esbenp.prettier-vscode",
