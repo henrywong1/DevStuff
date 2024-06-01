@@ -239,7 +239,7 @@
    // GENERAL CONFIGURATION
    // =====================
 
-   "workbench.settings.editor": "json",
+   //"workbench.settings.editor": "json",
    "workbench.startupEditor": "none",
    "window.zoomLevel": 1,
    "editor.fontSize": 16,
